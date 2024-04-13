@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "Storybook addon for theming and customization",
   "keywords": [
-    "storybook-addons", "storybook-addons"
+    "storybook-addons",
+    "storybook-addons"
   ],
   "repository": {
     "type": "git",
@@ -63,6 +64,7 @@
     "@types/node": "^18.15.0",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
+    "@types/react-json-editor-ajrm": "^2.5.6",
     "@vitejs/plugin-react": "^4.2.1",
     "auto": "^11.1.1",
     "boxen": "^7.1.1",
@@ -98,8 +100,19 @@
   "storybook": {
     "displayName": "Upswing Theme Editor",
     "supportedFrameworks": [
-      "react", "vue", "angular", "web-components", "ember", "html", "svelte", "preact", "react-native"
+      "react",
+      "vue",
+      "angular",
+      "web-components",
+      "ember",
+      "html",
+      "svelte",
+      "preact",
+      "react-native"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0"
   }
 }

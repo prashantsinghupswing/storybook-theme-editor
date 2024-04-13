@@ -1,6 +1,16 @@
 import type { Preview } from "@storybook/react";
 
 const preview: Preview = {
+  globalTypes: {
+    themeConfig: {
+      defaultValue: '{"partnerCode":"EDHS"}',
+      type: 'string',
+    },
+    shouldUseCustomTheme: {
+      defaultValue: false,
+      type: 'boolean',
+    }
+  },
   parameters: {
     backgrounds: {
       default: "light",

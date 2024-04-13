@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@storybook/theming";
-import { H1, Link, Code } from "@storybook/components";
+import Editor from "@monaco-editor/react";
 
 const TabWrapper = styled.div(({ theme }) => ({
   background: theme.background.content,
@@ -17,26 +17,19 @@ const TabInner = styled.div({
 
 interface TabContentProps {
   code: string;
+  updateCode: (code: string) => void;
 }
 
 export const TabContent: React.FC<TabContentProps> = ({ code }) => (
-  <TabWrapper>
-    <TabInner>
-      <H1>My Addon</H1>
-      <p>
-        Your addon can create a custom tab in Storybook.
-      </p>
-      <p>
-        You have full control over what content is being rendered here. You can
-        use components from{" "}
-        <Link href="https://github.com/storybookjs/storybook/tree/next/code/ui/components">
-          @storybook/components
-        </Link>{" "}
-        to match the look and feel of Storybook, for example the{" "}
-        <code>&lt;Code /&gt;</code> component below. Or build a completely
-        custom UI.
-      </p>
-      <Code>{code}</Code>
-    </TabInner>
-  </TabWrapper>
+    <Editor
+      height="90vh"
+      width="70vw"
+      language="json"
+      theme="vs-dark"
+      options={{
+        formatOnType: true,
+        formatOnPaste: true
+      }}
+      value={code}
+    />
 );
